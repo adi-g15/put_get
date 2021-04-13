@@ -8,7 +8,11 @@ import {
 import "semantic-ui-css/semantic.min.css";
 
 export default function App() {
-    const [savedData, setSavedData] = useState(["Mesad2", "resf4 43", "34534 fas"]);
+    // data: {
+    //         createdAt: '',
+    //         content: ''
+    // }
+    const [savedData, setSavedData] = useState([]);
     const [content, setContent] = useState("");
 
     useEffect(() => {
@@ -45,7 +49,7 @@ export default function App() {
                 console.error(err);
             })
 
-        setSavedData(data => [...data, content])
+        setSavedData(data => [...data, {content, createdAt: "Now"}])
         setContent("");    
         }
 
@@ -68,7 +72,7 @@ export default function App() {
                     {
                         savedData.map((data, i) => (
                             <List.Item>
-                                {data}
+                                {data.createdAt} - {data.content}
                             </List.Item>
                         ))
                     }
