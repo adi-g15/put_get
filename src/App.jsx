@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Form } from "semantic-ui-react";
 import {
-    Button,
     Container,
-    Input,
     List,
     Segment
 } from "semantic-ui-react";
@@ -38,9 +36,7 @@ export default function App() {
             body: JSON.stringify({ content })
         })
             .then(res => {
-                if (res.ok) {
-                    return res.json();
-                } else {
+                if (!res.ok) {
                     throw Error("Response Code: ", res.status);
                 }
             })
