@@ -27,7 +27,7 @@ export default function App() {
             .catch(err => {
                 console.error(err);
             })
-    })
+    }, [])
 
     function handleSubmit() {
         console.log("Submitted");
