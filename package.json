@@ -1,0 +1,35 @@
+{
+  "name": "put_get",
+  "version": "0.0.5",
+  "main": "index.js",
+  "repository": "https://github.com/adi-g15/put_get.git",
+  "author": "Aditya Gupta <adityag.ug19.cs@nitp.ac.in>",
+  "license": "Unlincense",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "netlify": "ntl dev"
+  },
+  "dependencies": {
+    "airtable-node": "^0.1.20",
+    "mongoose": "^5.11.19",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.71.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
