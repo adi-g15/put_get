@@ -2,6 +2,12 @@ const fetch = require("node-fetch");
 
 const PRIMARY_COLUMN_NAME = 'Content';
 exports.handler = async (event, context) => {
+    if(event.method !== 'POST') {
+        return {
+            statusCode: 405 // Method Not Allowed
+        }
+    }
+
     try{
         const {content} = JSON.parse(event.body);
 

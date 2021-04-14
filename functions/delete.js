@@ -5,6 +5,12 @@ const airtable = get_airtable('saved');
 exports.handler = async (event, context) => {
     const { id } = event.queryStringParameters;
 
+    if(event.method !== 'DELETE') {
+        return {
+            statusCode: 405 // Method Not Allowed
+        }
+    }
+
     if (!id) {
         return {
             statusCode: 400,
