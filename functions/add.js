@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
             }
         }
 
-        await fetch(`https://api.airtable.com/v0/appHu7WWKTo2lY0gL/saved`, {
+        const {id, createdTime: createdAt} = await fetch(`https://api.airtable.com/v0/appHu7WWKTo2lY0gL/saved`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${process.env.AIRTABLE_API_KEY}`,
@@ -29,14 +29,15 @@ exports.handler = async (event, context) => {
             })
         }).then(res => {
             if(res.ok) {
-                return;
+                return res.json();
             } else {
                 throw Error(res.statusText || res.status);
             }
         })
 
         return {
-            statusCode: 204
+            statusCode: 200,
+            body: JSON.stringify({id, createdAt})
         };
         
     }catch(err){
