@@ -67,7 +67,7 @@ export default function App() {
 
         console.log("Received");
         const { id, createdAt } = await res.json();
-        console.log({ id, createdAt, data });
+        console.log({ id, createdAt, savedData });
         setSavedData(data => data.map((entry) => {
           if (entry.content === content) {
             entry = {
